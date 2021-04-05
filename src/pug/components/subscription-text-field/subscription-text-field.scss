@@ -1,0 +1,35 @@
+.subscription-text-field {
+  position: relative;
+  user-select: none;
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 44px;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: $bodyTextFont;
+  font-size: $bodyTextFontSize;
+  color: $dark-75;
+  align-items: center;
+  cursor: pointer;
+
+  &__wrapper {
+    padding: 0px 2px 4px 13px;
+    flex: 1 0 calc(100% - 44px);
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &-hover &__input {
+    border-color: $dark-100;
+  }
+
+  &__arrow {
+    position: relative;
+    flex: 1 0 44px;
+    @include centered();
+  }
+}

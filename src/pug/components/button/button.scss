@@ -1,0 +1,96 @@
+$border: 2px;
+
+.button {
+  font-family: $labelTextFont;
+  font-size: $labelTextFontSize;
+  text-transform: uppercase;
+  color: $purple;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  min-height: 44px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+  word-break: break-all;
+  justify-content: center;
+
+  &_default {
+    background-color: transparent;
+    &.button_hover,
+    &:hover {
+      color: $dark-50;
+    }
+  }
+
+  & + & {
+    margin-left: 20px;
+  }
+
+  &_colored {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    border-radius: 22px;
+    color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &.button_hover,
+    &:hover {
+      opacity: 0.5;
+      color: #ffffff;
+    }
+  }
+
+  &_outline {
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+    color: $purple;
+    background: #fff;
+    background-clip: padding-box;
+    border: solid $border transparent;
+    border-radius: 22px;
+
+    &.button_hover:before,
+    &:hover:before {
+      opacity: 0.5;
+    }
+  }
+
+  &_outline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient($purple, $blue);
+  }
+
+  &_arrowed {
+    position: relative;
+    background: linear-gradient(180deg, $purple 0%, $blue 100%);
+    border-radius: 22px;
+    color: #fff;
+    padding-left: 43px;
+    padding-right: 47px;
+    width: 100%;
+
+    &.button_hover,
+    &:hover {
+      opacity: 0.5;
+    }
+
+    svg {
+      position: absolute;
+      right: 13px;
+    }
+  }
+
+  &_sm {
+    min-height: 34px;
+  }
+}

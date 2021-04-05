@@ -1,0 +1,16 @@
+mixin checkbox({className, isRich=false, name, description, id, isChecked}= {})
+  -
+    var componentClassName = 'checkbox'
+    var checkboxNameClassName = 'checkbox__name'
+    var nameClassName = checkboxNameClassName
+    componentClassName += className ? ' ' + className : ''
+    nameClassName +=  isRich ? ' ' +  checkboxNameClassName + '_rich' : ''
+  div(class= componentClassName)  
+    div(class=nameClassName)= name
+    if description
+      .checkbox__description= description
+    input.checkbox__input.js-checkbox__input(type='checkbox' name= id checked= isChecked)
+    span.checkbox__checkmark
+      svg(width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M1.46439 2.29245L5.70703 6.53509L4.29282 7.9493L0.0501771 3.70666L1.46439 2.29245Z' fill='url(#checkbox0_svg)')
+        path(d='M8.53546 0.878232L9.94967 2.29245L4.29282 7.9493L2.8786 6.53509L8.53546 0.878232Z' fill='url(#checkbox1_svg)')

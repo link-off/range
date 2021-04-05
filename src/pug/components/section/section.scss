@@ -1,0 +1,47 @@
+.section {
+  background-color: #fff;
+  position: relative;
+
+  &__wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+
+    @include desktop {
+      max-width: 1160px;
+    }
+
+    @include media(1210) {
+      margin: 0 20px;
+    }
+  }
+
+  &_line {
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      border-bottom: 1px solid $dark-10;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  &_shadow {
+    box-shadow: 0px 10px 20px $dark-5;
+    z-index: 1;
+  }
+
+  &_transparent {
+    background-color: transparent;
+  }
+
+  &_center &__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: none;
+    background-color: #e5e5e5;
+  }
+}

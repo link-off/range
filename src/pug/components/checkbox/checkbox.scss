@@ -1,0 +1,73 @@
+.checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  min-height: 20px;
+  margin-bottom: 10px;
+  
+  &__input {
+    position: absolute;
+    opacity: 0;
+    top: 2px;
+    cursor: pointer;
+    height: 0;
+    width: 100%;
+  }
+
+  &__input:checked ~ &__checkmark {
+    background: #ffffff;
+    border: 1px solid $purple;
+    box-sizing: border-box;
+    border-radius: 4px;
+    svg {
+      opacity: 1;
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    @include centered();
+
+    svg {
+      opacity: 0;
+    }
+  }
+
+  &__name {
+    font-family: $bodyTextFont;
+    font-size: $bodyTextFontSize;
+    font-weight: $bodyTextFontFontWeight;
+    color: $dark-50;
+    line-height: 18px; // FIX: нет в vars, не учтен в guide
+    padding-left: 30px;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+
+    &_rich {
+      font-family: $labelTextFont;
+      font-weight: $wigetTitleFontWeight;
+      color: $dark-75;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__description {
+
+    @include t-body();
+    color: $dark-50;
+    line-height: $labelTextFontLineHeight;
+    padding-left: 30px;
+    padding-right: 6px;
+  }
+}

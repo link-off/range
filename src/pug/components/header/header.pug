@@ -1,0 +1,21 @@
+mixin header({isHomePage= false, isNotAuth= false, isAuth= false, name} = {})
+  .header
+    .header__logo
+      +logo()
+    .header__wrapper
+      svg.header__navigation-button(xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24')
+        path(d='M0 0h24v24H0z' fill='none')
+        path(d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z')
+      .header__navigation
+        +navigation({item: 'О нас', isActive: !isHomePage, isShowActions: false})
+        +navigation({item: 'Услуги', isActive: false, isShowActions: true})
+        +navigation({item: 'Вакансии', isActive: false, isShowActions: false})
+        +navigation({item: 'Новости', isActive: false, isShowActions: false})
+        +navigation({item: 'Соглашения', isActive: false, isShowActions: true})
+      if isNotAuth
+        div.header__button-wrapper
+          +button({value: 'войти', type: 'outline', size: 'sm'})
+          +button({value: 'зарегистрироваться', type: 'colored', size: 'sm'})    
+      if isAuth
+        div.header__user-wrapper
+          .header__name= name

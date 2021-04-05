@@ -1,0 +1,74 @@
+.header {
+  padding: 15px 0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+
+  &__name {
+
+    @include t-body-0();
+    line-height: $elementLineHeight;
+    color: $dark-50;
+    display: inline-flex;
+    text-transform: capitalize;
+    padding-left: 20px;
+    position: relative;
+
+    &:before {
+      display: block;
+      content: "";
+      border-right: 1px solid $dark-10;
+      height: 30px;
+      position: absolute;
+      left: 0;
+      top: -6px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    @include media(953) {
+      flex: 1;
+      justify-content: space-between;
+    }
+  }
+
+  &__navigation-button {
+    @include media(953) {
+      width: 24px;
+      margin-right: 20px;
+    }
+  }
+
+  &__navigation-button {
+    display: none;
+
+    @include media(953) {
+      display: block;
+    }
+  }
+
+  &__navigation {
+    @include media(953) {
+      display: none;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    flex-direction: row;
+    min-width: 304px;
+  }
+}

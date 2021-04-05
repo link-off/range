@@ -1,0 +1,42 @@
+block variables
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    title #{title}
+    meta(name="description", content=description)
+    block head
+
+  body(class=pageClass)
+    svg.layout__gradient(width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg' )
+      defs
+        lineargradient#checkbox0_svg(x1='7.82835' y1='0.171125' x2='2.1715' y2='5.82798' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#BC9CFF')
+          stop(offset='1' stop-color='#8BA4F9')
+        lineargradient#checkbox1_svg(x1='7.82835' y1='0.171125' x2='2.1715' y2='5.82798' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#BC9CFF')
+          stop(offset='1' stop-color='#8BA4F9')
+        lineargradient#radio_svg(x1='6' y1='0' x2='6' y2='12' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#BC9CFF')
+          stop(offset='1' stop-color='#8BA4F9')
+        lineargradient#logo_paint0(x1='15.2945' y1='15.2939' x2='15.2945' y2='27.0587' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#BC9CFF')
+          stop(offset='1' stop-color='#8BA4F9')
+        lineargradient#logo_paint1(x1='26.0295' y1='15.2939' x2='26.0295' y2='21.2057' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#6FCF97')
+          stop(offset='1' stop-color='#66D2EA')
+        lineargradient#logo_paint2(x1='20' y1='0' x2='20' y2='40' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#BC9CFF')
+          stop(offset='1' stop-color='#8BA4F9')   
+        lineargradient#twitter_linear(x1='12' y1='-2' x2='12' y2='22' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#BC9CFF')
+          stop(offset='1' stop-color='#8BA4F9')
+        lineargradient#facebook_linear(x1='11' y1='-1' x2='11' y2='23' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#BC9CFF')
+          stop(offset='1' stop-color='#8BA4F9') 
+        lineargradient#instagram_linear(x1='11' y1='-1' x2='11' y2='23' gradientUnits='userSpaceOnUse')
+          stop(stop-color='#BC9CFF')
+          stop(offset='1' stop-color='#8BA4F9')
+    block content
+    block script

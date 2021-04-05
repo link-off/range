@@ -1,0 +1,42 @@
+.field-wrapper {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: $labelTextFontSize;
+  }
+
+  &__title {
+    font-family: $labelTextFont;
+    color: $dark-100;
+  }
+
+  &__description {
+    font-family: $bodyTextFont;
+    color: $dark-50;
+  }
+
+  &__content_offset {
+    margin-top: 17px;
+  }
+
+  &__title_headline {
+    
+    @include t-sub-title();
+    line-height: $insideWigetsLineHeight;
+    color: $dark-100;
+    text-transform: initial;
+    letter-spacing: -0.03rem;
+  }
+
+  &__description_headline {
+
+    @include t-body-0();
+    line-height: $labelTextFontLineHeight;
+    color: $dark-50;
+    text-transform: initial;
+    letter-spacing: -0.03rem;
+    margin-top: 7px;
+  }
+}

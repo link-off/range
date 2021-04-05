@@ -1,0 +1,27 @@
+.text-field {
+  &__input {
+    height: 44px;
+    width: 100%;
+    border: 1px solid $dark-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 8px 15px;
+    color: $dark-75;
+    @include t-body-0();
+
+    &:hover,
+    &:focus {
+      border-color: $dark-100;
+    }
+
+    &::placeholder {
+      color: $dark-25;
+      text-transform: capitalize;
+      @include t-body-0();
+    }
+  }
+
+  &-hover input {
+    border-color: $dark-100;
+  }
+}

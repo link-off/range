@@ -1,0 +1,26 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+
+  &__wrapper{
+    @include size(40px);
+  }
+  svg {
+    @include size(40px);
+  }
+
+  &_grey {
+    @include size(48px);
+
+    svg {
+      @include size(48px);
+    }
+  }
+
+ &__name {
+    width: 54px;
+    height: 14px;
+    background-position: center;
+    margin-left: 13px;
+  }
+}

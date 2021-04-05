@@ -1,0 +1,7 @@
+mixin text-field({className, isHover= false, placeholder, value, isDisabled, valueMin, pattern}= {})
+  -
+    var componentClassName = 'text-field'
+    componentClassName += isHover ? ' ' + componentClassName + '-hover': ''
+    componentClassName += className ? ' ' + className : ''
+  div(class= componentClassName)
+    input.text-field__input.js-text-field__input(type= type placeholder= placeholder value= value pattern=pattern disabled=isDisabled min=valueMin)

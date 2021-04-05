@@ -1,0 +1,50 @@
+include ../checkbox/checkbox
+include ../text-field/text-field
+include ../field-wrapper/field-wrapper
+include ../range-slider/range-slider
+
+mixin panel({id, slider, mode}= {})
+  -
+    const {valueMin, valueMax, isTip, type, valueFrom, valueTo, item, step} = slider || {};
+    const {indexFrom, indexTo, values} = item || {};
+    const isSlider = !!slider;
+    const isItems = isSlider && item;
+    const isValues = isItems &&  values;
+    const lengthValues = isValues && values.length || 0;
+    const zeroValues = lengthValues < 1;
+    const isUsingItems = isValues && lengthValues > 1;
+    const isMinValue = isSlider && valueMin;
+    const isMaxValue = isSlider && valueMax;
+
+  form.panel.js-panel(autocomplete = "off" class = (mode === 'vertical' ? 'panel_vertical' : '') id=id)
+    .panel__wrapper 
+      .panel__params
+        .panel__checkbox_vertical.js-panel__checkbox_vertical
+          +checkbox({id: 'checkbox_buttons_0_1', name: 'Vertical', isChecked: mode === 'vertical' ? true : false})
+        .panel__checkbox_multi.js-panel__checkbox_multi
+          +checkbox({id: 'checkbox_buttons_0_2', name: 'Two handles', isChecked: type === 'multi' ? true : false})
+        .panel__checkbox_tip.js-panel__checkbox_tip
+          +checkbox({id: 'checkbox_buttons_0_3', name: 'Show tips', isChecked: isTip})   
+      .panel__input_values
+          .panel__input_value-min.js-panel__input_value-min
+            +field-wrapper({className: 'margin-t-10', title: 'Min. value'})
+              +text-field({type: 'text', placeholder:'Min. value', value:isUsingItems ? values[0] : valueMin, isDisabled : isUsingItems})      
+          .panel__input_value-max.js-panel__input_value-max
+            +field-wrapper({className: 'margin-t-10', title: 'Max. value'})
+              +text-field({type: 'text', placeholder:'Max. value', value:isUsingItems ? values[lengthValues-1] : valueMax, isDisabled : isUsingItems})      
+          .panel__input_step.js-panel__input_step
+            +field-wrapper({className: 'margin-t-10', title: 'Step'})
+              +text-field({type:'number', placeholder:'Step', value: isUsingItems ? 1 : step, isDisabled : isUsingItems, valueMin: 1})  
+          .panel__input_valueFrom.js-panel__input_valueFrom
+            +field-wrapper({className: 'margin-t-10', title: 'value from'})
+              +text-field({type: 'text', placeholder:'value from', value: type === 'multi' ? (isUsingItems ? values[indexFrom] : valueFrom) : '', isDisabled: type === 'single'})  
+          .panel__input_valueTo.js-panel__input_valueTo
+            +field-wrapper({className: 'margin-t-10', title: 'value to'})
+              +text-field({type: 'text', placeholder:'value to', value: isUsingItems ? values[indexTo] : valueTo})    
+          .panel__input_indexFrom.js-panel__input_indexFrom
+            +field-wrapper({className: 'margin-t-10', title: 'Index from'})
+              +text-field({type: 'number', placeholder:'Index from', value: type === 'multi' ? (isItems ? indexFrom : '') : '', isDisabled: !isUsingItems || !isTwoHandles, valueMin: 0})             
+          .panel__input_indexTo.js-panel__input_indexTo
+            +field-wrapper({className: 'margin-t-10', title: 'Index to'})
+              +text-field({type: 'number', placeholder:'Index to', value: isItems ? indexTo : '', isDisabled: !isUsingItems, valueMin: 0})    
+    .panel__range-slider.range-slider(data-options = slider)

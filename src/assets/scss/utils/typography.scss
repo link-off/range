@@ -1,0 +1,38 @@
+@mixin t-label() {
+  font-family: $labelTextFont;
+  font-size: $labelTextFontSize;
+  font-weight: $wigetTitleFontWeight;
+  line-height: $labelTextFontLineHeight;
+}
+
+@mixin t-body() {
+  font-family: $bodyTextFont;
+  font-size: $labelTextFontSize;
+  font-weight: $bodyTextFontFontWeight;
+}
+
+@mixin t-body-0() {
+  font-family: $bodyTextFont;
+  font-weight: $bodyTextFontFontWeight;
+  font-size: $bodyTextFontSize;
+}
+
+@mixin t-sub-title() {
+  font-family: $labelTextFont;
+  font-weight: $wigetTitleFontWeight;
+  font-size: $insideWigetsFontSize;
+  line-height: $insideWigetsLineHeight;
+}
+
+@mixin t-head() {
+  font-family: $labelTextFont;
+  font-weight: $wigetTitleFontWeight;
+  font-size: $wigetTitleFontSize;
+  line-height: $wigetTitleLineHeight;
+}
+
+@mixin t-button() {
+  font-family: $labelTextFont;
+  font-size: $labelTextFontSize;
+  line-height: $labelTextFontLineHeight;
+}

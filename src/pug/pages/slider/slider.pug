@@ -1,0 +1,34 @@
+extends ../../components/layout/layout
+
+include ../../components/panel/panel
+include ../../components/range-slider/range-slider
+include ../../components/section/section
+include ../../components/header/header
+include ../../components/logo/logo
+include ../../components/navigation/navigation
+include ../../components/button/button
+include ../../components/footer/footer
+include ../../components/copyright/copyright
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/social-icon/social-icon
+
+block variables
+  - var title = 'Slider Plugin';
+  - var pageClass = 'slider-page';
+
+block content
+  +section({isShadow: true})
+    +header({isNotAuth: true, isAuth: false, name: 'юлий цезарь', isHomePage: true}) 
+  +section({className: `${pageClass}__border padding-b-75`})  
+    .slider-page__container
+      .slider-page__filter
+        +panel()
+      .slider-page__slider
+        +range-slider({mode: 'horizontal', type: 'multi', isTip: true, valueMin: 0, valueMax: 1060, step: 0, valueFrom: 322, valueTo: 720,})
+  +section()
+    +footer()
+  +section({isLine: true, isShadow: true})  
+    +copyright()      
+
+  script(src="jquery/jquery.js")
+  script(src="jquery-plugins/range-slider/range-slider.js")  

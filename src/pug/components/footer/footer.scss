@@ -1,0 +1,101 @@
+.footer {
+  padding-top: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-family: $bodyTextFont;
+  font-weight: $bodyTextFontFontWeight;
+  font-size: $bodyTextFontSize;
+  line-height: $elementLineHeight;
+  color: $dark-50;
+  padding-bottom: 100px;
+
+  @include media(1127) {
+    padding-top: 116px;
+    padding-bottom: 0;
+
+    &__text,
+    &__navigation,
+    &__about,
+    &__support,
+    &__subscribtion,
+    &__nav {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 260px;
+
+    @include media(1127) {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: 160px 159px 160px 260px;
+    grid-column-gap: 40px;
+    padding-top: 3px;
+  }
+
+  &__text {
+    margin-top: 18px;
+    color: $dark-75;
+    line-height: $bodyTextFontLineHeight;
+  }
+
+  &__colomn-item {
+
+    @include t-body-0();
+    line-height: $elementLineHeight;
+    color: $dark-50;
+    display: flex;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__colomn-title {
+    font-family: $labelTextFont;
+    font-weight: $wigetTitleFontWeight;
+    font-size: $labelTextFontSize;
+    line-height: $elementLineHeight;
+    color: $dark-100;
+    text-transform: uppercase;
+    letter-spacing: -0.03rem;
+  }
+
+  &__column-text {
+
+    @include t-body-0();
+    line-height: $bodyTextFontLineHeight;
+    color: $dark-75;
+  }
+
+  &_mobile {
+    padding-top: 116px;
+    padding-bottom: 0;
+  }
+  &_mobile &__text,
+  &_mobile &__navigation,
+  &_mobile &__about,
+  &_mobile &__support,
+  &_mobile &__subscribtion,
+  &_mobile &__nav {
+    display: none;
+  }
+
+  &_mobile &__logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

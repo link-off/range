@@ -1,0 +1,6 @@
+mixin range-slider(options={})
+  -
+    var componentClassName = 'j-range-slider'
+    componentClassName += options.className ? ' ' + options.className : ''
+    var style = options.mode == 'vertical' ? `height: ${options.height || 400}px` : ''
+  div(class= componentClassName data-options= options style= style)

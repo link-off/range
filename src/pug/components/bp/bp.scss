@@ -1,0 +1,25 @@
+.bp {
+  position: fixed;
+  top: 4px;
+  right: 4px;
+  z-index: 99999999999999999999;
+  
+  &:before {
+    display: block;
+    @include desktop {
+      content: "desktop";
+    }
+    @include tablet {
+      content: "tablet";
+    }
+    @include phone {
+      content: "phone";
+    }
+    @include smPhone {
+      content: "smPhone";
+    }
+    @include mobile {
+      content: "mobile";
+    }
+  }
+}

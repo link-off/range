@@ -1,0 +1,18 @@
+mixin field-wrapper({className, isHeadIndent= false, isHead= false, title, description}= {})
+  -
+    var baseClassName = 'field-wrapper'
+    var componentClassName = baseClassName
+    componentClassName += className ? ' ' + className : ''
+    var contentClassName = `${baseClassName}__content`
+    contentClassName += isHeadIndent ? ` ${contentClassName}_offset` : ''
+    var titleClassName = `${baseClassName}__title` 
+    titleClassName += isHead ? ` ${titleClassName}_headline` : ''
+    var descriptionClassName = `${baseClassName}__description` 
+    descriptionClassName += isHead ? ` ${descriptionClassName}_headline` : ''
+  div(class= componentClassName)
+    .field-wrapper__head
+      div(class= titleClassName)= title
+      div(class= descriptionClassName)= description
+    if block
+      div(class= contentClassName)
+        block

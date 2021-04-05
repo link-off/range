@@ -1,0 +1,36 @@
+.navigation {
+  display: inline-flex;
+  &__item {
+
+    @include t-body-0();
+    line-height: $elementLineHeight;
+    color: $dark-50;
+    margin-right: 20px;
+    padding-top: 4px;
+    display: inline-flex;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &_active {
+      font-family: $labelTextFont;
+      font-weight: $wigetTitleFontWeight;
+      font-size: $bodyTextFontSize;
+      line-height: $elementLineHeight;
+      color: $dark-75;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    width: 24px;
+    height: 21px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    margin-bottom: 2px;
+  }
+}

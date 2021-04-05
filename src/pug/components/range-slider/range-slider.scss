@@ -1,0 +1,132 @@
+.range-slider {
+  position: relative;
+  height: 6px;
+
+  &__tip {
+    @include t-body();
+    color: $dark-50;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tip_min {
+    left: 0;
+    bottom: 30px;
+  }
+  &__tip_max {
+    right: 0;
+    bottom: 30px;
+  }
+
+  &__tip_from,
+  &__tip_to {
+    left: 0px;
+    right: 0px;
+    top: 30px;
+    cursor: pointer;
+  }
+
+  &__range {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #ffffff;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+
+  &__range_selected {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    pointer-events: none;
+  }
+
+  &__handle_from,
+  &__handle_to {
+    position: absolute;
+    z-index: 3;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    transform: translate(-10px, -5px);
+    cursor: pointer;
+
+    :hover {
+      box-shadow: 0 0 0 20px rgba(98, 0, 238, 0.1);
+    }
+    :active {
+      box-shadow: 0 0 0 40px rgba(98, 0, 238, 0.2);
+    }
+  }
+
+  &_single &__range_selected {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    left: 0;
+  }
+
+  &_vertical {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &_vertical.range-slider_single &__range_selected {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+    top: 0;
+  }
+
+  &_vertical &__range {
+    top: 0px;
+    left: 5px;
+    height: 100%;
+    width: 6px;
+  }
+
+  &_vertical &__range_selected {
+    left: 6px;
+    width: 4px;
+    height: 84px;
+  }
+
+  &_vertical &__handle_from,
+  &_vertical &__handle_to {
+    left: 10px;
+  }
+
+  &_vertical &__tip_min {
+    top: 0;
+    bottom: auto;
+  }
+
+  &_vertical &__tip_max {
+    bottom: 0;
+    right: auto;
+  }
+  &_vertical &__tip_min,
+  &_vertical &__tip_max,
+  &_vertical &__tip_from,
+  &_vertical &__tip_to {
+    left: 70px;
+  }
+
+  &_vertical &__tip_from,
+  &_vertical &__tip_to {
+    left: 18px;
+    transform: translateY(-50%);
+  }
+}

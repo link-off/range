@@ -1,0 +1,54 @@
+extends ../components/layout/layout
+
+include ../components/panel/panel
+include ../components/range-slider/range-slider
+include ../components/section/section
+include ../components/header/header
+include ../components/logo/logo
+include ../components/navigation/navigation
+include ../components/button/button
+include ../components/footer/footer
+include ../components/copyright/copyright
+include ../components/subscription-text-field/subscription-text-field
+include ../components/social-icon/social-icon
+
+block variables
+  - var title = 'Webpack + Pug';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  style.
+    .index-page__container {
+      display: grid;
+      grid-template-columns: 266px auto;
+      grid-column-gap: 60px;
+    }
+
+    .index-page__filter {
+      margin-top: 30px;
+    }
+
+    .index-page__slider {
+      margin-top: 100px;
+    }
+
+    .index-page__border {
+      border-bottom: 1px solid rgba(31, 32, 65, 0.75);
+    }
+
+  +section({isShadow: true})
+    +header({isNotAuth: true, isAuth: false, name: 'юлий цезарь', isHomePage: true}) 
+  +section({className: `${pageClass}__border padding-b-75`})  
+    .index-page__container
+      .index-page__filter
+        +panel()
+      .index-page__slider
+        +range-slider({mode: 'horizontal', type: 'multi', isTip: true, valueMin: 0, valueMax: 1060, step: 0, valueFrom: 322, valueTo: 720,})
+  +section()
+    +footer()
+  +section({isLine: true, isShadow: true})  
+    +copyright()           
+
+  script(src="jquery/jquery.js")
+  script(src="jquery-plugins/range-slider/range-slider.js")      

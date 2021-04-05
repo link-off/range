@@ -1,0 +1,9 @@
+mixin copyright({isMobile= false}= {})
+  -
+    var compomentClassName = isMobile ? 'copyright copyright_mobile' : 'copyright'
+  div(class = compomentClassName)
+    .copyright__text Copyright © 2018 Toxin отель. Все права защищены.
+    .copyright__icons
+      +social-icon({type: 'twitter'})
+      +social-icon({type: 'facebook'})
+      +social-icon({type: 'instagram'})

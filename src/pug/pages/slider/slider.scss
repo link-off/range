@@ -1,0 +1,19 @@
+.slider-page {
+  &__container {
+    display: grid;
+    grid-template-columns: 266px auto;
+    grid-column-gap: 60px;
+  }
+
+  &__filter {
+    margin-top: 30px;
+  }
+
+  &__slider {
+    margin-top: 100px;
+  }
+
+  &__border {
+    border-bottom: 1px solid rgba(31, 32, 65, 0.75);
+  }
+}

@@ -1,0 +1,42 @@
+// Fonts here
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: 
+      url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/Montserrat/Montserrat-Bold.woff') format('woff'), /* Modern Browsers*/ 
+      url('../fonts/Montserrat/Montserrat-Bold.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: 
+      url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'), /* Modern Browsers*/ 
+      url('../fonts/Montserrat/Montserrat-Regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+}    
+
+//@font-face {
+//   font-family: 'Quicksand-Bold';
+//    src: url('../fonts/Quicksand/Quicksand-Bold.ttf') format('truetype');} 
+    
+//@font-face {
+//    font-family: 'Quicksand-Regular';
+//    src: url('../fonts/Quicksand/Quicksand-Regular.ttf') format('truetype');}         
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
+}     
+
+@font-face {
+    font-family: 'QuicksandBold';
+    src: url('../fonts/Quicksand/Quicksand-Bold.ttf') format('truetype');
+}       
+
+@font-face {
+    font-family: 'OpenSans';
+    src: 
+      url('../fonts/OpenSans/OpenSans-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/OpenSans/OpenSans-Bold.woff') format('woff'), /* Modern Browsers*/ 
+      url('../fonts//OpenSans/OpenSans-Bold.svg#Montserrat') format('svg'); /* Legacy iOS */
+}

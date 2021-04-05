@@ -1,0 +1,49 @@
+// px to rem
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin centered() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin form-title {
+  font-family: $wigetTitleFont;
+  font-weight: $wigetTitleFontWeight;
+  font-size: $wigetTitleFontSize;
+  line-height: $wigetTitleLineHeight;
+  color: $dark-100;
+  letter-spacing: -0.03rem;
+
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}
